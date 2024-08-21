@@ -25,7 +25,7 @@ def getDerivatives(pathtoDerovatives):
 def readEpoFif(filePath):
     epochs = mne.read_epochs(filePath, preload=True)
     print(epochs)
-    montage = mne.channels.make_standard_montage('biosemi128')  # Asegúrate de que coincide con el número de electrodos
+    montage = mne.channels.make_standard_montage('biosemi128') 
     epochs.set_montage(montage)
     data = []
     # Visualizar la disposición de los electrodos
