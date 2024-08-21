@@ -51,7 +51,6 @@ def readEpoFif(filePath):
 
 
 def getClasses(files,saveDir):
-    classes = []
     arribaClass = np.empty((0,128,1153))
     abajoClass = np.empty((0,128,1153))
     derechaClass = np.empty((0,128,1153))
@@ -62,10 +61,6 @@ def getClasses(files,saveDir):
         abajoClass = np.concatenate((abajoClass,data[1]),axis = 0)
         derechaClass = np.concatenate((derechaClass,data[2]),axis = 0)
         izquierdaClass = np.concatenate((izquierdaClass,data[3]),axis = 0)
-    classes.append(arribaClass)
-    classes.append(abajoClass)
-    classes.append(derechaClass)
-    classes.append(izquierdaClass)
     os.makedirs(saveDir, exist_ok=True)
     arriba_path = os.path.join(saveDir, "arribaData.npy")
     np.save(arriba_path, arribaClass)
