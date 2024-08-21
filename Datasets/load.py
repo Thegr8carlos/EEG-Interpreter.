@@ -91,6 +91,3 @@ def loadClasses(save_dir):
     return classes
 
 
-getClasses(getDerivatives("derivatives"),"Data")
-
-loadClasses("Data")
